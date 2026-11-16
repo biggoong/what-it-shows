@@ -1,0 +1,32 @@
+---
+layout: runbook
+title: '#4471 · two problems in the date reports'
+owner: Nhung Dao
+status: open
+reviewed: 2026-11-16
+signature: Nhung Dao
+---
+
+<script>
+  import Callout from '#lib/kb/Callout.svelte';
+  import CauseTable from '#lib/kb/CauseTable.svelte';
+  import RenderStamp from '#lib/kb/RenderStamp.svelte';
+</script>
+
+Ticket #4471 merged every date report into one known issue. The reports are two problems. The table counts unique report ids. A repeated id in the export is one report.
+
+## The two problems
+
+<CauseTable ticket={4471} />
+
+The cause marked as this ticket is the shared parser. It reads every date month-first, so a day-first tenant's day and month come out swapped.
+
+The other cause is the booking-v3 form. The hint under its date field is `MM/DD/YYYY`. The form then reads the date the tenant's way, day first, so people type the month first and the form takes that as the day. Those reports were merged into #4471 and have no ticket of their own.
+
+A few reports were read by the desk as a one-day move. They stay in the count of the cause their tenant files them under. The note under the table is that reading.
+
+<Callout>
+Each row is one problem. The report count on that row is how many reports the problem covers.
+</Callout>
+
+<RenderStamp {signature} />
