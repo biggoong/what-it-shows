@@ -2,7 +2,7 @@
 layout: runbook
 title: '#4471 · two problems in the date reports'
 owner: Nhung Dao
-status: open
+status: closed
 reviewed: 2026-11-16
 signature: "v1.eyJzdG9yeSI6Im9mZiIsInN1YiI6IjM2MzQiLCJhdWQiOiJjaGFsbGVuZ2U6d2hhdC1pdC1zaG93cyIsImlhdCI6MTc5NDg0NjAyMiwiZXhwIjoxNzk0OTMyNDIyfQ.WvC6rpmP9ode4z27RntKY82PHEov9mQPOzZlDdJ-3nI"
 ---
@@ -28,5 +28,13 @@ A few reports were read by the desk as a one-day move. They stay in the count of
 <Callout>
 Each row is one problem. The report count on that row is how many reports the problem covers.
 </Callout>
+
+## Closed 5 October
+
+#4471 is closed.
+
+The parser is fixed: `fix(dates): parse dd/mm for eu locales`.
+
+The hint will not be fixed. The booking-v3 form is retired.
 
 <RenderStamp {signature} />
